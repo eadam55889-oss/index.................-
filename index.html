@@ -5,23 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>إلى الأبد ❤️</title>
     <style>
-        body { background-color: #fdfdf0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; color: #5d4037; }
-        #login-screen { text-align: center; background: white; padding: 40px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-        .pass-field { width: 150px; height: 50px; text-align: center; font-size: 24px; font-weight: bold; border: 2px solid #e0e0e0; border-radius: 12px; outline: none; }
-        #main-content { display: none; text-align: center; width: 100%; animation: fadeIn 2s; }
-        h1 { color: #880e4f; font-style: italic; margin-bottom: 25px; font-size: 1.8rem; }
-        .counter-container { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
-        .box { background: white; padding: 12px; border-radius: 18px; min-width: 75px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #fce4ec; }
-        .number { font-size: 26px; font-weight: bold; color: #d81b60; display: block; }
-        .label { font-size: 11px; color: #8d6e63; font-weight: bold; }
-        .memories-btn { position: fixed; top: 20px; right: 20px; background: #d81b60; color: white; border: none; padding: 12px 20px; border-radius: 50px; cursor: pointer; display: none; font-weight: bold; }
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center; backdrop-filter: blur(8px); }
-        .modal-content { background: white; padding: 20px; border-radius: 25px; width: 90%; max-width: 450px; text-align: center; max-height: 85vh; overflow-y: auto; }
-        .gallery-item { width: 100%; border-radius: 15px; margin-bottom: 15px; border: 2px solid #fce4ec; }
-        .cam-btn { font-size: 30px; cursor: pointer; background: #fce4ec; border-radius: 50%; width: 60px; height: 60px; display: inline-flex; align-items: center; justify-content: center; border: none; }
-        .heart { position: absolute; color: #ff4081; font-size: 20px; pointer-events: none; animation: floatUp 6s linear forwards; opacity: 0; }
-        @keyframes floatUp { 0% { transform: translateY(100vh) scale(0.5); opacity: 1; } 100% { transform: translateY(-10vh) scale(1.5); opacity: 0; } }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        body { background-color: #fdfdf0; font-family: 'Segoe UI', Tahoma, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; color: #5d4037; }
+        #login-screen { text-align: center; background: white; padding: 40px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .pass-field { width: 140px; height: 45px; text-align: center; font-size: 22px; border: 2px solid #ddd; border-radius: 10px; outline: none; }
+        #main-content { display: none; text-align: center; width: 100%; }
+        .counter-container { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+        .box { background: white; padding: 15px; border-radius: 15px; min-width: 70px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .number { font-size: 24px; font-weight: bold; color: #d81b60; display: block; }
+        .label { font-size: 12px; color: #888; }
+        .memories-btn { position: fixed; top: 20px; right: 20px; background: #d81b60; color: white; border: none; padding: 10px 20px; border-radius: 50px; cursor: pointer; display: none; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center; }
+        .modal-content { background: white; padding: 20px; border-radius: 20px; width: 90%; max-width: 400px; text-align: center; max-height: 80vh; overflow-y: auto; }
+        .gallery-item { width: 100%; border-radius: 10px; margin-bottom: 10px; border: 2px solid #eee; }
+        .heart { position: absolute; color: #ff4081; font-size: 20px; pointer-events: none; animation: floatUp 6s linear forwards; }
+        @keyframes floatUp { 0% { transform: translateY(100vh); opacity: 1; } 100% { transform: translateY(-10vh); opacity: 0; } }
     </style>
 </head>
 <body>
@@ -29,12 +26,12 @@
     <button id="memBtn" class="memories-btn" onclick="openMemories()">📅 ذكرياتنا</button>
 
     <div id="login-screen">
-        <h2 style="color: #880e4f;">الباسورد يا ست الكل 🙂‍↕️</h2>
-        <input type="password" class="pass-field" maxlength="5" placeholder="•••••" oninput="checkPass(this.value)">
+        <h2 style="color: #880e4f;">كلمة السر ❤️</h2>
+        <input type="password" class="pass-field" maxlength="5" oninput="checkPass(this.value)">
     </div>
 
     <div id="main-content">
-        <h1>كل لحظه وانا معاكي♥</h1>
+        <h1 style="color: #880e4f;">كل لحظة وأنا معاكي♥</h1>
         <div class="counter-container">
             <div class="box"><span id="years" class="number">0</span><span class="label">سنة</span></div>
             <div class="box"><span id="months" class="number">0</span><span class="label">شهر</span></div>
@@ -47,206 +44,62 @@
 
     <div id="memoriesModal" class="modal">
         <div class="modal-content">
-            <h2 style="color: #d81b60;">ألبوم أيامنا</h2>
-            <p style="font-size: 13px; color: #888;">ارفع الصورة على ImgBB وانسخ "الرابط المباشر" هنا:</p>
-            
-            <input type="text" id="imgUrlInput" placeholder="حط رابط الصورة هنا..." style="width: 80%; padding: 10px; border-radius: 10px; border: 1px solid #ddd; margin-bottom: 10px;">
-            <button onclick="addPhotoToList()" style="background: #d81b60; color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer;">إضافة للألبوم</button>
-
-            <div id="galleryGrid" style="margin-top: 20px;"></div>
-            <button onclick="closeMemories()" style="margin-top:20px; padding:10px 25px; background:#f5f5f5; border:none; border-radius:10px;">إغلاق</button>
+            <h3 style="color: #d81b60;">ألبوم صورنا</h3>
+            <input type="text" id="imgInput" placeholder="حط رابط الصورة هنا..." style="width:80%; padding:10px; margin-bottom:10px; border-radius:10px; border:1px solid #ddd;">
+            <button onclick="savePhoto()" style="background:#d81b60; color:white; border:none; padding:10px; border-radius:10px; width:85%;">إضافة الصورة 📷</button>
+            <div id="gallery" style="margin-top:20px;"></div>
+            <button onclick="closeMemories()" style="margin-top:20px; border:none; background:none; color:#888;">إغلاق</button>
         </div>
     </div>
 
     <script>
-        // التاريخ: 27 مارس 2025
-        const startDate = new Date(2025, 2, 27, 0, 0, 0); 
+        const startDate = new Date(2025, 2, 27, 0, 0, 0); // 27 مارس 2025
 
         function checkPass(v) {
             if (v === "55555") {
                 document.getElementById('login-screen').style.display = 'none';
                 document.getElementById('main-content').style.display = 'block';
                 document.getElementById('memBtn').style.display = 'block';
-                startCounter(); startHearts();
-                loadSavedPhotos();
+                setInterval(updateTimer, 1000);
+                startHearts();
+                loadPhotos();
             }
         }
 
-        function startCounter() {
-            setInterval(() => {
-                const now = new Date();
-                let diff = now - startDate;
-                let years = now.getFullYear() - startDate.getFullYear();
-                let months = now.getMonth() - startDate.getMonth();
-                let days = now.getDate() - startDate.getDate();
-                if (days < 0) { months--; days += new Date(now.getFullYear(), now.getMonth(), 0).getDate(); }
-                if (months < 0) { years--; months += 12; }
-                document.getElementById("years").innerText = years;
-                document.getElementById("months").innerText = months;
-                document.getElementById("days").innerText = days;
-                document.getElementById("hours").innerText = Math.floor((diff / 3600000) % 24);
-                document.getElementById("minutes").innerText = Math.floor((diff / 60000) % 60);
-                document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
-            }, 1000);
+        function updateTimer() {
+            const now = new Date();
+            let diff = now - startDate;
+            let years = now.getFullYear() - startDate.getFullYear();
+            let months = now.getMonth() - startDate.getMonth();
+            let days = now.getDate() - startDate.getDate();
+            if (days < 0) { months--; days += new Date(now.getFullYear(), now.getMonth(), 0).getDate(); }
+            if (months < 0) { years--; months += 12; }
+            document.getElementById("years").innerText = years;
+            document.getElementById("months").innerText = months;
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = Math.floor((diff / 3600000) % 24);
+            document.getElementById("minutes").innerText = Math.floor((diff / 60000) % 60);
+            document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
         }
 
-        // نظام تخزين الصور الجديد (بيعتمد على الروابط عشان ميفشلش)
-        function addPhotoToList() {
-            const url = document.getElementById('imgUrlInput').value;
-            if(!url) return alert("حط رابط الصورة الأول!");
-            
-            let photos = JSON.parse(localStorage.getItem('ourPhotos') || "[]");
+        function savePhoto() {
+            const url = document.getElementById('imgInput').value;
+            if(!url) return;
+            let photos = JSON.parse(localStorage.getItem('myMemories') || "[]");
             photos.push(url);
-            localStorage.setItem('ourPhotos', JSON.stringify(photos));
-            
-            document.getElementById('imgUrlInput').value = "";
-            displayPhotos(photos);
+            localStorage.setItem('myMemories', JSON.stringify(photos));
+            document.getElementById('imgInput').value = "";
+            loadPhotos();
         }
 
-        function loadSavedPhotos() {
-            let photos = JSON.parse(localStorage.getItem('ourPhotos') || "[]");
-            displayPhotos(photos);
-        }
-
-        function displayPhotos(photos) {
-            const grid = document.getElementById('galleryGrid');
-            grid.innerHTML = "";
-            photos.reverse().forEach(u => {
+        function loadPhotos() {
+            let photos = JSON.parse(localStorage.getItem('myMemories') || "[]");
+            const gallery = document.getElementById('gallery');
+            gallery.innerHTML = "";
+            photos.reverse().forEach(src => {
                 const img = document.createElement('img');
-                img.src = u; img.className = 'gallery-item';
-                grid.appendChild(img);
-            });
-        }
-
-        function startHearts() {
-            setInterval(() => {
-                const h = document.createElement('div'); h.className = 'heart'; h.innerHTML = '❤️';
-                h.style.left = Math.random() * 100 + 'vw'; document.body.appendChild(h);
-                setTimeout(() => h.remove(), 6000);
-            }, 500);
-        }
-        function openMemories() { document.getElementById('memoriesModal').style.display = 'flex'; }
-        function closeMemories() { document.getElementById('memoriesModal').style.display = 'none'; }
-    </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إلى الأبد ❤️</title>
-    <style>
-        body { background-color: #fdfdf0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; color: #5d4037; }
-        #login-screen { text-align: center; background: white; padding: 40px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-        .pass-field { width: 150px; height: 50px; text-align: center; font-size: 24px; font-weight: bold; border: 2px solid #e0e0e0; border-radius: 12px; outline: none; }
-        #main-content { display: none; text-align: center; width: 100%; animation: fadeIn 2s; }
-        h1 { color: #880e4f; font-style: italic; margin-bottom: 25px; font-size: 1.8rem; }
-        .counter-container { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
-        .box { background: white; padding: 12px; border-radius: 18px; min-width: 75px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #fce4ec; }
-        .number { font-size: 26px; font-weight: bold; color: #d81b60; display: block; }
-        .label { font-size: 11px; color: #8d6e63; font-weight: bold; }
-        .memories-btn { position: fixed; top: 20px; right: 20px; background: #d81b60; color: white; border: none; padding: 12px 20px; border-radius: 50px; cursor: pointer; display: none; font-weight: bold; }
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center; backdrop-filter: blur(8px); }
-        .modal-content { background: white; padding: 20px; border-radius: 25px; width: 90%; max-width: 450px; text-align: center; max-height: 85vh; overflow-y: auto; }
-        .gallery-item { width: 100%; border-radius: 15px; margin-bottom: 15px; border: 2px solid #fce4ec; }
-        .cam-btn { font-size: 30px; cursor: pointer; background: #fce4ec; border-radius: 50%; width: 60px; height: 60px; display: inline-flex; align-items: center; justify-content: center; border: none; }
-        .heart { position: absolute; color: #ff4081; font-size: 20px; pointer-events: none; animation: floatUp 6s linear forwards; opacity: 0; }
-        @keyframes floatUp { 0% { transform: translateY(100vh) scale(0.5); opacity: 1; } 100% { transform: translateY(-10vh) scale(1.5); opacity: 0; } }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    </style>
-</head>
-<body>
-
-    <button id="memBtn" class="memories-btn" onclick="openMemories()">📅 ذكرياتنا</button>
-
-    <div id="login-screen">
-        <h2 style="color: #880e4f;">الباسورد يا ست الكل 🙂‍↕️</h2>
-        <input type="password" class="pass-field" maxlength="5" placeholder="•••••" oninput="checkPass(this.value)">
-    </div>
-
-    <div id="main-content">
-        <h1>كل لحظه وانا معاكي♥</h1>
-        <div class="counter-container">
-            <div class="box"><span id="years" class="number">0</span><span class="label">سنة</span></div>
-            <div class="box"><span id="months" class="number">0</span><span class="label">شهر</span></div>
-            <div class="box"><span id="days" class="number">0</span><span class="label">يوم</span></div>
-            <div class="box"><span id="hours" class="number">0</span><span class="label">ساعة</span></div>
-            <div class="box"><span id="minutes" class="number">0</span><span class="label">دقيقة</span></div>
-            <div class="box"><span id="seconds" class="number">0</span><span class="label">ثانية</span></div>
-        </div>
-    </div>
-
-    <div id="memoriesModal" class="modal">
-        <div class="modal-content">
-            <h2 style="color: #d81b60;">ألبوم أيامنا</h2>
-            <p style="font-size: 13px; color: #888;">ارفع الصورة على ImgBB وانسخ "الرابط المباشر" هنا:</p>
-            
-            <input type="text" id="imgUrlInput" placeholder="حط رابط الصورة هنا..." style="width: 80%; padding: 10px; border-radius: 10px; border: 1px solid #ddd; margin-bottom: 10px;">
-            <button onclick="addPhotoToList()" style="background: #d81b60; color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer;">إضافة للألبوم</button>
-
-            <div id="galleryGrid" style="margin-top: 20px;"></div>
-            <button onclick="closeMemories()" style="margin-top:20px; padding:10px 25px; background:#f5f5f5; border:none; border-radius:10px;">إغلاق</button>
-        </div>
-    </div>
-
-    <script>
-        // التاريخ: 27 مارس 2025
-        const startDate = new Date(2025, 2, 27, 0, 0, 0); 
-
-        function checkPass(v) {
-            if (v === "55555") {
-                document.getElementById('login-screen').style.display = 'none';
-                document.getElementById('main-content').style.display = 'block';
-                document.getElementById('memBtn').style.display = 'block';
-                startCounter(); startHearts();
-                loadSavedPhotos();
-            }
-        }
-
-        function startCounter() {
-            setInterval(() => {
-                const now = new Date();
-                let diff = now - startDate;
-                let years = now.getFullYear() - startDate.getFullYear();
-                let months = now.getMonth() - startDate.getMonth();
-                let days = now.getDate() - startDate.getDate();
-                if (days < 0) { months--; days += new Date(now.getFullYear(), now.getMonth(), 0).getDate(); }
-                if (months < 0) { years--; months += 12; }
-                document.getElementById("years").innerText = years;
-                document.getElementById("months").innerText = months;
-                document.getElementById("days").innerText = days;
-                document.getElementById("hours").innerText = Math.floor((diff / 3600000) % 24);
-                document.getElementById("minutes").innerText = Math.floor((diff / 60000) % 60);
-                document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
-            }, 1000);
-        }
-
-        // نظام تخزين الصور الجديد (بيعتمد على الروابط عشان ميفشلش)
-        function addPhotoToList() {
-            const url = document.getElementById('imgUrlInput').value;
-            if(!url) return alert("حط رابط الصورة الأول!");
-            
-            let photos = JSON.parse(localStorage.getItem('ourPhotos') || "[]");
-            photos.push(url);
-            localStorage.setItem('ourPhotos', JSON.stringify(photos));
-            
-            document.getElementById('imgUrlInput').value = "";
-            displayPhotos(photos);
-        }
-
-        function loadSavedPhotos() {
-            let photos = JSON.parse(localStorage.getItem('ourPhotos') || "[]");
-            displayPhotos(photos);
-        }
-
-        function displayPhotos(photos) {
-            const grid = document.getElementById('galleryGrid');
-            grid.innerHTML = "";
-            photos.reverse().forEach(u => {
-                const img = document.createElement('img');
-                img.src = u; img.className = 'gallery-item';
-                grid.appendChild(img);
+                img.src = src; img.className = 'gallery-item';
+                gallery.appendChild(img);
             });
         }
 
